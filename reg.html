@@ -8,11 +8,24 @@
 		</script>
 	</head>
 	<body>
-		<div class="header">
-			<h2>Registration</h2>
+		<div class="table">
+			<div id="display">
+			</div>
+			<table border="1">
+				<tr>
+					<th>Name</th><th>Email</th><th>Password</th><th>Address</th><th>DOB</th><th>Gender</th>
+					<th>Catagory</th><th>Subject</th>
+				</tr>
+				<tbody id="data">
+				</tbody>
+			</table>
 		</div>
+		<div class="form">
+			<div class="header">
+				<h2>Registration</h2>
+			</div>
 		
-		<div class="body">
+			<div class="body">
 			<div class="input">
 				<label>Name</label>
 				<div class="box">
@@ -78,9 +91,10 @@
 			<div class="input">
 				<center><button type="button" onclick="displayResult()" name="reg" class="btn">Register</button></center>
 			</div>
-			
-			<div id="display">
-			</div>
 		</div>
+
+		</div>
+		
+		
 	</body>
 </html>

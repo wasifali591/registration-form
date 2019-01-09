@@ -1,44 +1,47 @@
+var result;
+var sub = '';
+var gender;
+var name;
+var email;
+var psw;
+var bday;
+var catagory;
+var table;
+var rowCount;
+var row;
 function displayResult(){
-	var result;
-	var sub = '';
-	var gender
-	var name = document.getElementById('name').value;
-	var email =  document.getElementById('email').value;
-	var psw =  document.getElementById('psw').value;
-	var add = document.getElementById('add').value;
-	var bday = document.getElementById('bday').value;
-	//var gender = document.getElementById('gender').value;
+	/*get the value from from */
+	name = document.getElementById('name').value;
+	email =  document.getElementById('email').value;
+	psw =  document.getElementById('psw').value;
+	add = document.getElementById('add').value;
+	bday = document.getElementById('bday').value;
 	document.getElementsByName("gender").forEach(function (node) {
 	if(node.checked)
 		gender=node.value;
 	})
-	var catagory = document.getElementById('catagory').value;
-	//var sub = document.getElementById('sub').value;
-	
+	catagory = document.getElementById('catagory').value;	
 	document.getElementsByName("sub").forEach(function (node) {
 	if(node.checked)
-		sub+=node.value;
+		sub+=' '+node.value;
 	})
 	
-	result = name + '<br>'+ email +'<br>'+psw+'<br>'+add+'<br>'+bday+'<br>'+gender+'<br>'+catagory+'<br>'+sub;
-	//result += '<b>' + email + '</b>';
+	table = document.getElementById('data');
+	result = table.innerHTML; //strore the previous value in result
+	var row = getRow(name,email,psw,add,bday,gender,catagory,sub); //store the new value in row
+	result += row; //concat result and row in rusult to hold the total data
+	table.innerHTML = result;
 	
-	document.getElementById('display').innerHTML = result;
-	
+	// Reset form values
 	document.getElementById('name').value = '';
 	document.getElementById('email').value = '';
 	document.getElementById('psw').value = '';
 	document.getElementById('add').value = '';
 	document.getElementById('bday').value = '';
-	//document.getElementById('gender').value = '';
 	document.getElementById('catagory').value = '';
-	//document.getElementById('sub').value = '';
-	//display.innerHTML(name);
-	/*document.write("Contact No: "+email+"<br>");
-	document.write("Password: "+psw+"<br>");
-	document.write("Address: "+add+"<br>");
-	document.write("Date of Birth: "+bday+"<br>");
-	document.write("Sex: "+gender+"<br>");
-	document.write("Caste: "+catagory+"<br>");
-	document.write("Subject: "+sub+"<br>");*/
+}
+function getRow(name,email,psw,add,bday,gender,catagory,sub){
+	var row ='<tr><td>'+name + '</td><td>'+email +'</td><td>'+psw+'</td><td>'+add+'</td><td>'+
+	bday+'</td><td>'+gender+'</td><td>'+catagory+'</td><td>'+sub+'</td></tr>';
+	return row;
 }

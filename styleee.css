@@ -8,7 +8,6 @@ body{
 /* a class to design the header of the form */
 .header{
 	width:26%;
-	margin:50px auto 0px;
 	color:#FFFFFF;
 	background-color:#663366;
 	text-align:center;
@@ -18,25 +17,25 @@ body{
 /* a class to dsign for the rest of the form*/
 .body{
 	width:26%;
-	margin:0px auto;
 	padding:20px;
 	border-radius:0px 0px 10px 10px;
 	background-color:#FFFFFF;
 }
 
 .input{
-	margin: 10px 0px 10px 0px;
 
+}
+
+.table {
+	float: right;
 }
 
 .input label{
 	display:block;
 	text-align:left;
-	margin:10px;
-
 }
 /* id for design the input area*/
-#style{
+.form-control {
 	border-radius:5px;
 	border: none;
 	width:93%;
@@ -46,7 +45,6 @@ body{
 }
 
 .box{
-	margin-left:10px;
 	width:90%;
 	font-size:16px;
 	border-radius:5px;
@@ -60,4 +58,9 @@ body{
 	background-color:#663366;
 	border:none;
 	border-radius:5px;
+}
+/* to add scroll bar in text area*/
+textarea
+{
+    overflow-y:scroll;
 }
