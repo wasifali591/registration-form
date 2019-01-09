@@ -1,0 +1,67 @@
+/* CSS Document */
+body{
+	font-size:120%;
+	background-color:#CCCCCC;
+
+}
+
+.header{
+	width:26%;
+	margin:50px auto 0px;
+	color:#FFFFFF;
+	background-color:#663366;
+	text-align:center;
+	border:1px solid color:#663366;
+	border-bottom:none;
+	border-radius: 10px 10px 0px 0px;
+	padding:20px;
+}
+.body{
+	width:26%;
+	margin:0px auto;
+	padding:20px;
+	
+	border-radius:0px 0px 10px 10px;
+	background-color:#FFFFFF;
+}
+
+.input{
+	margin: 10px 0px 10px 0px;
+
+}
+
+.input label{
+	display:block;
+	text-align:left;
+	margin:10px;
+
+}
+.input input,textarea{
+	
+}
+#style{
+	border-radius:5px;
+	border: none;
+	width:92%;
+	padding:5px 10px;
+	font-size:16px;
+	
+}
+
+.box{
+	margin-left:10px;
+	width:90%;
+	
+	font-size:16px;
+	border-radius:5px;
+	border: 1px solid gray;
+}
+
+.btn{
+	padding:10px;
+	font-size:16px;
+	color:#FFFFFF;
+	background-color:#663366;
+	border:none;
+	border-radius:5px;
+}
