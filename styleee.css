@@ -1,26 +1,25 @@
 /* CSS Document */
+/*background color and font size for the full body of the page*/
 body{
 	font-size:120%;
 	background-color:#CCCCCC;
 
 }
-
+/* a class to design the header of the form */
 .header{
 	width:26%;
 	margin:50px auto 0px;
 	color:#FFFFFF;
 	background-color:#663366;
 	text-align:center;
-	border:1px solid color:#663366;
-	border-bottom:none;
 	border-radius: 10px 10px 0px 0px;
 	padding:20px;
 }
+/* a class to dsign for the rest of the form*/
 .body{
 	width:26%;
 	margin:0px auto;
 	padding:20px;
-	
 	border-radius:0px 0px 10px 10px;
 	background-color:#FFFFFF;
 }
@@ -36,13 +35,11 @@ body{
 	margin:10px;
 
 }
-.input input,textarea{
-	
-}
+/* id for design the input area*/
 #style{
 	border-radius:5px;
 	border: none;
-	width:92%;
+	width:93%;
 	padding:5px 10px;
 	font-size:16px;
 	
@@ -51,12 +48,11 @@ body{
 .box{
 	margin-left:10px;
 	width:90%;
-	
 	font-size:16px;
 	border-radius:5px;
 	border: 1px solid gray;
 }
-
+/*a class to design the button */
 .btn{
 	padding:10px;
 	font-size:16px;

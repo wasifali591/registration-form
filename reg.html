@@ -1,85 +1,86 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Registration</title>
-<link rel="stylesheet" type="text/css" href="styleee.css">
-</head>
-
-<body>
-	<div class="header">
-		<h2>Registration</h2>
-	</div>
-	
-	<div class="body">
-		<div class="input">
-			<label>Name</label>
-			<div class="box">
-				<input id="style" type="text" name="name">
+	<head>
+		<meta content="text/html"; charset="utf-8">
+		<title>Registration</title>
+		<link rel="stylesheet" type="text/css" href="styleee.css">
+		<script src="myScript.js">	
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<h2>Registration</h2>
+		</div>
+		
+		<div class="body">
+			<div class="input">
+				<label>Name</label>
+				<div class="box">
+					<input id="name" class="form-control" type="text" name="name">
+				</div>
+			</div>
+			
+			<div class="input">
+				<label>Email</label>
+				<div class="box">
+					<input id="email" class="form-control" type="email" name="email">
+				</div>
+			</div>
+			
+			<div class="input">
+				<label>Password</label>
+				<div class="box">
+					<input id="psw" class="form-control" type="password" name="psw">
+				</div>
+			</div>
+			
+			<div class="input">
+				<label>Adress</label>
+				<div class="box">
+					<textarea id="add" class="form-control" name="add"></textarea>
+				</div>
+			</div>
+			
+			<div class="input">
+				<label>Date of Birth</label>
+				<div class="box">
+					<input id="bday" class="form-control" type="date" name="bday">
+				</div>
+			</div>			
+			<div class="input">
+				<label>Gender</label>
+				<div class="box">
+					<input type="radio" name="gender" value="male" checked> Male<br>
+					<input type="radio" name="gender" value="female"> Female<br>
+					<input type="radio" name="gender" value="other"> Other
+				</div>
+			</div>			
+			<div class="input">
+				<label>Category</label>
+				<div class="box">
+					<select id="catagory" class="form-control" name="catagory">
+						<option>Gen</option>
+						<option>SC</option>
+						<option>ST</option>
+						<option>OBC</option>
+					</select>
+				</div>	
+			</div>			
+			<div class="input">
+				<label>Subject</label>
+				<div class="box">
+					<input type="checkbox" name="sub" value="php"> PHP<br>
+					<input type="checkbox" name="sub" value="java"> JAVA<br>
+					<input type="checkbox" name="sub" value="html"> HTML<br>
+					<input type="checkbox" name="sub" value="css"> CSS
+				</div>
+			</div>			
+			<div class="input">
+				<center><button type="button" onclick="displayResult()" name="reg" class="btn">Register</button></center>
+			</div>
+			
+			<div id="display">
 			</div>
 		</div>
-		
-		<div class="input">
-			<label>Email</label>
-			<div class="box">
-				<input id="style" type="email" name="email">
-			</div>
-		</div>
-		
-		<div class="input">
-			<label>Password</label>
-			<div class="box">
-				<input id="style" type="password" name="psw">
-			</div>
-		</div>
-		
-		<div class="input">
-			<label>Adress</label>
-			<div class="box">
-				<textarea id="style" name="add"></textarea>
-			</div>
-		</div>
-		
-		<div class="input">
-			<label>Date of Birth</label>
-			<div class="box">
-				<input id="style" type="date" name="bday">
-			</div>
-		</div>
-		
-		<div class="input">
-			<label>Gender</label>
-			<div class="box">
-				<input type="radio" name="gender" value="male" checked> Male<br>
-				<input type="radio" name="gender" value="female"> Female<br>
-				<input type="radio" name="gender" value="other"> Other
-			</div>
-		</div>
-		
-		<div class="input">
-			<label>Category</label>
-			<div class="box">
-				<select id="style" name="select">
-					<option>Gen</option>
-					<option>SC</option>
-					<option>ST</option>
-					<option>OBC</option>
-				</select>
-			</div>	
-		</div>
-		
-		<div class="input">
-			<label>Subject</label>
-			<div class="box">
-				<input type="checkbox" name="sub" value="php"> PHP<br>
-				<input type="checkbox" name="sub" value="java"> JAVA<br>
-				<input type="checkbox" name="sub" value="html"> HTML<br>
-				<input type="checkbox" name="sub" value="css"> CSS
-			</div>
-		</div>
-		
-		<div class="input">
-			<center><button type="submit" name="reg" class="btn">Register</button></center>
-		</div>
-	</div>
-</body>
+	</body>
 </html>
