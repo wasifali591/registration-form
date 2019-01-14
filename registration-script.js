@@ -1,13 +1,14 @@
 /**
 * File Name  : registration-script
 * Description : js for add,update and remove data from a table . input taken from a form 
-* Created date : 01/11/2019
+* Created date : 14/01/2019
 * Author  : Md Wasif Ali
 * Comments : 
 */
 var sub = '';
 var rIndex;
 var registrationTable=document.getElementById("registrationTable");
+var nameValidate=0,emailValidate=0,passwordValidate=0;
 
 /* Reset form values */
 function resetForm(){
@@ -40,6 +41,7 @@ function myGender(){
 	var genders = document.getElementsByName("gender");
 	genders[0].checked=true;
 }
+
 /*
 get the table by id
 create a new row and corosponding cells
@@ -48,33 +50,39 @@ set the value into row cell
  cell1,cell2...cell8 are the variables to hold the data, trying to fetch form the table
 	*/
 
-function addHtmlTableRow(){	
-	newRow=registrationTable.insertRow(registrationTable.length);
-	cell1=newRow.insertCell(0);
-	cell2=newRow.insertCell(1);
-	cell3=newRow.insertCell(2);
-	cell4=newRow.insertCell(3);
-	cell5=newRow.insertCell(4);
-	cell6=newRow.insertCell(5);
-	cell7=newRow.insertCell(6);
-	cell8=newRow.insertCell(7);
-	
-	readInputFromForm();
-	
-	cell1.innerHTML=name;
-	cell2.innerHTML=email;
-	cell3.innerHTML=psw;
-	cell4.innerHTML=add;
-	cell5.innerHTML=bday;
-	cell6.innerHTML=gender;
-	cell7.innerHTML=catagory;
-	cell8.innerHTML=sub;
-	
-	resetForm();	
-	selectRowToInput();
-	topFunction();
-	showDiv();
-	divPosition();
+function addHtmlTableRow(){
+	if(nameValidate===1 && emailValidate===1 && passwordValidate===1){
+		newRow=registrationTable.insertRow(registrationTable.length);
+		cell1=newRow.insertCell(0);
+		cell2=newRow.insertCell(1);
+		cell3=newRow.insertCell(2);
+		cell4=newRow.insertCell(3);
+		cell5=newRow.insertCell(4);
+		cell6=newRow.insertCell(5);
+		cell7=newRow.insertCell(6);
+		cell8=newRow.insertCell(7);
+		
+		readInputFromForm();
+		
+		cell1.innerHTML=name;
+		cell2.innerHTML=email;
+		cell3.innerHTML=psw;
+		cell4.innerHTML=add;
+		cell5.innerHTML=bday;
+		cell6.innerHTML=gender;
+		cell7.innerHTML=catagory;
+		cell8.innerHTML=sub;
+		document.getElementById("wrongInput").innerHTML="";
+		
+		resetForm();	
+		selectRowToInput();
+		topFunction();
+		showDiv();
+		divPosition();
+		
+	}else{
+		document.getElementById("wrongInput").innerHTML="Enter the required field.";
+	}
 }
 
 /* display selected row data into the form */
@@ -91,7 +99,9 @@ function selectRowToInput(){
 			document.getElementById(this.cells[5].innerHTML).checked = true;
 			document.getElementById("catagory").value=this.cells[6].innerHTML;
 			document.getElementById('actionButton').style.display = "block";
-			checkedCheckbox();			
+			checkedCheckbox();
+			//document.getElementById('registerButton').style.display = 'none';
+			
 		};
 	}
 }
@@ -151,8 +161,11 @@ function validateName(){
 	name = document.getElementById('name').value;
 	if(name===''){
 		document.getElementById("wrongName").innerHTML="Enter your name.";
+		nameValidate=0;
+		
 	}else{
 		document.getElementById("wrongName").innerHTML="";
+		nameValidate=1;
 	}
 }
 
@@ -162,8 +175,10 @@ function validateEmail(email){
         if (reg.test(email.value) == false) 
         {
 			document.getElementById("wrongEmail").innerHTML="Invalid Email Address<br>name@mail.com";
+			emailValidate=0;
         }else{
 			document.getElementById("wrongEmail").innerHTML="";
+			emailValidate=1;
 		}
 }
 
@@ -172,12 +187,15 @@ function validatePassword(psw){
 	var reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 	if (reg.test(psw.value) == false) 
         {
-            document.getElementById("wrongPassword").innerHTML="Password must contain the following:<br>1.A lower case letter<br>2.A capital letter<br>3.A number<br>4.Minimum 8 characters";
+            document.getElementById("wrongPassword").innerHTML=
+			"Password must contain the following:<br>1.A lower case letter<br>2.A capital letter<br>3.A number<br>4.Minimum 8 characters";
+			passwordValidate=0;
         }else{
 			document.getElementById("wrongPassword").innerHTML="";
+			passwordValidate=1;
 		}
 }
-
+/*delete confirmation*/
 function ConfirmDelete()
 {
   var x = confirm("Are you sure you want to delete?");
@@ -188,15 +206,18 @@ function ConfirmDelete()
   }
 }
 
+/*show the record table*/
 function showDiv() {
    document.getElementById('dataTable').style.display = "block";
 }
 
+/*to change the position of <div> dynamically*/
 function divPosition(){
 	document.getElementById("headerPosition").style.margin = "20px 0px 0px 20px";
 	document.getElementById("bodyPosition").style.margin = "0px 0px 0px 20px";
 }
 
+/*get the value from the table , according to that checked the checkbox*/
 function checkedCheckbox(){
 	var str = registrationTable.rows[rIndex].cells[7].innerHTML;
     var arraySubject = str.split(" ");

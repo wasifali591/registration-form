@@ -1,7 +1,7 @@
 <!--
 * File Name  : registration-form
 * Description : html code to design a registration form and a table to show the data 
-* Created date : 01/11/2019
+* Created date : 14/01/2019
 * Author  : Md Wasif Ali
 * Comments : hole page is divided into to division: 1 for the registration for, another one for the table
 -->
@@ -40,6 +40,7 @@
 			
 			<div class="body" id="bodyPosition">
 				<div class="input">
+					<label class="error"id="wrongInput"> </label>
 					<label>Name<span id="mandatory">*</span></label>
 					<div class="box">
 						<input id="name" class="form-control" type="text" name="name" onblur="validateName()" required>
@@ -108,7 +109,7 @@
 					</div>
 				</div>		
 				
-				<div class="input">
+				<div class="input" id="registerButton">
 					<center>
 						<button type="button" onclick="addHtmlTableRow();" name="reg" class="btn" id="btn">Register</button>
 					</center>
